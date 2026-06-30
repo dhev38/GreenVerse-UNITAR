@@ -1,13 +1,13 @@
-/* ============================
+/* ==========================================
    GREENVERSE UNITAR
-   Developed by:
-=============================== */
+   Global Styles (Refactored)
+========================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Poppins:wght@400;600;700;800&display=swap');
 
-/* ============================
+/* ==========================================
 RESET
-=============================== */
+========================================== */
 
 *{
     margin:0;
@@ -20,1073 +20,735 @@ html{
 }
 
 body{
-
     font-family:'DM Sans',sans-serif;
-
     background:#F7FFF8;
-
     color:#1F2937;
-
-    overflow-x:hidden;
-
     line-height:1.7;
-
+    overflow-x:hidden;
 }
 
 img{
-
-    width:100%;
-
     display:block;
-
+    width:100%;
 }
 
-/* ============================
-COLORS
-=============================== */
+/* ==========================================
+ROOT VARIABLES
+========================================== */
 
 :root{
-
---primary:#2E7D32;
-
---secondary:#43A047;
-
---light:#81C784;
-
---bg:#F7FFF8;
-
---white:#ffffff;
-
---text:#1F2937;
-
---shadow:0 20px 40px rgba(0,0,0,.08);
-
+    --primary:#2E7D32;
+    --secondary:#43A047;
+    --light:#81C784;
+    --bg:#F7FFF8;
+    --white:#ffffff;
+    --text:#1F2937;
+    --shadow:0 20px 40px rgba(0,0,0,.08);
 }
 
-/* ============================
-HEADINGS
-=============================== */
+/* ==========================================
+GLOBAL
+========================================== */
 
 h1,h2,h3,h4{
-
     font-family:'Poppins',sans-serif;
-
 }
 
 section{
-
     padding:100px 8%;
-
 }
 
 .section-title{
-
     text-align:center;
-
     margin-bottom:70px;
-
 }
 
 .section-title span{
-
     color:var(--primary);
-
     font-weight:700;
-
     letter-spacing:3px;
-
     text-transform:uppercase;
-
 }
 
 .section-title h2{
-
     margin-top:10px;
-
     font-size:2.7rem;
-
 }
 
-/* ============================
+/* ==========================================
+COMMON CARD STYLE
+========================================== */
+
+.about-card,
+.issue-card,
+.tip-card,
+.stat-card,
+.objective-card,
+.timeline-item,
+.sdg-card{
+    background:#fff;
+    border-radius:25px;
+    box-shadow:var(--shadow);
+    transition:.35s;
+}
+
+.about-card:hover,
+.issue-card:hover,
+.tip-card:hover,
+.stat-card:hover,
+.objective-card:hover,
+.sdg-card:hover,
+.timeline-item:hover{
+    transform:translateY(-10px);
+}
+
+/* ==========================================
 NAVBAR
-=============================== */
+========================================== */
 
 header{
-
     position:fixed;
-
     top:0;
-
     width:100%;
-
     z-index:999;
-
 }
 
 .navbar{
-
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
     padding:22px 8%;
-
     backdrop-filter:blur(18px);
-
     background:rgba(255,255,255,.72);
-
     border-bottom:1px solid rgba(255,255,255,.4);
-
 }
 
 .logo{
-
     font-size:1.7rem;
-
     font-weight:800;
-
     color:var(--primary);
-
 }
 
 .nav-links{
-
     display:flex;
-
     list-style:none;
-
     gap:35px;
-
 }
 
 .nav-links a{
-
-    text-decoration:none;
-
     color:var(--text);
-
+    text-decoration:none;
     font-weight:600;
-
     transition:.3s;
-
 }
 
 .nav-links a:hover{
-
     color:var(--primary);
-
 }
 
 .btn-nav{
-
     background:var(--primary);
-
-    color:white;
-
+    color:#fff;
     padding:14px 28px;
-
     border-radius:50px;
-
     text-decoration:none;
-
     transition:.3s;
-
 }
 
 .btn-nav:hover{
-
-    transform:translateY(-4px);
-
     background:#1B5E20;
-
+    transform:translateY(-4px);
 }
 
-/* ============================
+/* ==========================================
 HERO
-=============================== */
+========================================== */
 
 .hero{
-
     min-height:100vh;
-
     display:grid;
-
     grid-template-columns:1fr 1fr;
-
     align-items:center;
-
     gap:60px;
-
     padding-top:130px;
-
 }
 
 .tag{
-
     display:inline-block;
-
-    background:#E8F5E9;
-
-    color:var(--primary);
-
     padding:12px 25px;
-
-    border-radius:50px;
-
     margin-bottom:25px;
-
+    border-radius:50px;
+    background:#E8F5E9;
+    color:var(--primary);
     font-weight:700;
-
 }
 
 .hero h1{
-
     font-size:4.5rem;
-
     line-height:1.1;
-
     margin-bottom:25px;
-
 }
 
 .hero p{
-
-    font-size:1.15rem;
-
-    color:#555;
-
     margin-bottom:40px;
-
+    color:#555;
+    font-size:1.15rem;
 }
 
 .hero-buttons{
-
     display:flex;
-
     gap:20px;
+}
 
+.primary-btn,
+.secondary-btn{
+    padding:18px 36px;
+    border-radius:50px;
+    text-decoration:none;
+    transition:.3s;
 }
 
 .primary-btn{
-
     background:var(--primary);
-
-    color:white;
-
-    text-decoration:none;
-
-    padding:18px 36px;
-
-    border-radius:50px;
-
+    color:#fff;
     font-weight:bold;
-
-    transition:.3s;
-
 }
 
 .primary-btn:hover{
-
     transform:translateY(-5px);
-
     box-shadow:var(--shadow);
-
 }
 
 .secondary-btn{
-
     border:2px solid var(--primary);
-
     color:var(--primary);
-
-    text-decoration:none;
-
-    padding:18px 36px;
-
-    border-radius:50px;
-
-    transition:.3s;
-
 }
 
 .secondary-btn:hover{
-
     background:var(--primary);
-
-    color:white;
-
+    color:#fff;
 }
 
 .hero-right img{
-
     border-radius:35px;
-
     box-shadow:var(--shadow);
-
 }
 
 .scroll-down{
-
-    text-align:center;
-
-    font-size:2rem;
-
-    color:var(--primary);
-
     margin-top:-20px;
-
+    text-align:center;
+    color:var(--primary);
+    font-size:2rem;
     animation:float 2s infinite;
-
 }
 
 @keyframes float{
-
-0%{
-
-transform:translateY(0);
-
+    0%{transform:translateY(0);}
+    50%{transform:translateY(12px);}
+    100%{transform:translateY(0);}
 }
 
-50%{
-
-transform:translateY(12px);
-
-}
-
-100%{
-
-transform:translateY(0);
-
-}
-
-}
-
-/*=========================================
+/* ==========================================
 ABOUT
-==========================================*/
+========================================== */
 
 .about{
-
-    background:#ffffff;
-
+    background:#fff;
 }
 
 .about-grid{
-
     display:grid;
-
     grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-
     gap:30px;
-
 }
 
 .about-card{
-
-    background:white;
-
     padding:40px;
-
-    border-radius:25px;
-
-    box-shadow:var(--shadow);
-
-    transition:.35s;
-
     text-align:center;
-
-}
-
-.about-card:hover{
-
-    transform:translateY(-12px);
-
 }
 
 .about-card i{
-
     font-size:3rem;
-
     color:var(--primary);
-
     margin-bottom:25px;
-
 }
 
 .about-card h3{
-
     margin-bottom:15px;
-
     font-size:1.4rem;
-
 }
 
 .about-card p{
-
     color:#666;
-
 }
 
-/*=========================================
+/* ==========================================
 ISSUES
-==========================================*/
+========================================== */
 
 .issues{
-
     background:#F7FFF8;
-
 }
 
 .issue-grid{
-
     display:grid;
-
     grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-
     gap:30px;
-
 }
 
 .issue-card{
-
-    background:white;
-
     padding:35px;
-
-    border-radius:25px;
-
-    transition:.35s;
-
-    box-shadow:var(--shadow);
-
     border:2px solid transparent;
-
 }
 
 .issue-card:hover{
-
     border-color:var(--light);
-
-    transform:translateY(-10px);
-
 }
 
 .issue-card i{
-
     font-size:2.8rem;
-
     color:var(--primary);
-
     margin-bottom:20px;
-
 }
 
 .issue-card h3{
-
     margin-bottom:15px;
-
 }
 
 .issue-card p{
-
     color:#666;
-
 }
 
-/*=========================================
+/* ==========================================
 STATISTICS
-==========================================*/
+========================================== */
 
 .stats{
-
     background:linear-gradient(135deg,#2E7D32,#43A047);
-
-    color:white;
-
+    color:#fff;
 }
 
 .stats .section-title span{
-
     color:#d7ffd7;
-
 }
 
 .stats .section-title h2{
-
-    color:white;
-
+    color:#fff;
 }
 
 .stats-grid{
-
     display:grid;
-
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
     gap:30px;
-
 }
 
 .stat-card{
-
-    background:rgba(255,255,255,.12);
-
-    backdrop-filter:blur(12px);
-
     padding:40px;
-
-    border-radius:25px;
-
     text-align:center;
-
-    transition:.35s;
-
-}
-
-.stat-card:hover{
-
-    transform:translateY(-10px);
-
+    backdrop-filter:blur(12px);
+    background:rgba(255,255,255,.12);
 }
 
 .stat-card h3{
-
     font-size:3.5rem;
-
     margin-bottom:15px;
-
 }
 
 .stat-card p{
-
     font-size:1rem;
-
 }
 
-/*=========================================
+/* ==========================================
 CALCULATOR
-==========================================*/
+========================================== */
 
 .calculator{
-
-    background:white;
-
+    background:#fff;
 }
 
 .calculator-box{
-
     max-width:700px;
-
     margin:auto;
-
-    background:#F7FFF8;
-
     padding:50px;
-
+    background:#F7FFF8;
     border-radius:30px;
-
     box-shadow:var(--shadow);
-
     text-align:center;
-
 }
 
 .calculator label{
-
     display:block;
-
-    font-size:1.2rem;
-
     margin-bottom:25px;
-
+    font-size:1.2rem;
 }
 
 .calculator input{
-
     width:100%;
-
     padding:18px;
-
-    border-radius:15px;
-
-    border:2px solid #ddd;
-
-    outline:none;
-
-    font-size:1rem;
-
     margin-bottom:25px;
-
+    border:2px solid #ddd;
+    border-radius:15px;
+    outline:none;
+    font-size:1rem;
 }
 
 .calculator input:focus{
-
     border-color:var(--primary);
-
 }
 
 .calculator button{
-
     padding:18px 45px;
-
     background:var(--primary);
-
-    color:white;
-
+    color:#fff;
     border:none;
-
-    cursor:pointer;
-
     border-radius:50px;
-
-    font-size:1rem;
-
+    cursor:pointer;
     transition:.3s;
-
 }
 
 .calculator button:hover{
-
     background:#1B5E20;
-
     transform:translateY(-4px);
-
 }
 
 #result{
-
     margin-top:35px;
-
     color:var(--primary);
-
     font-size:1.8rem;
-
 }
 
-/*=========================================
+/* ==========================================
 GREEN TIPS
-==========================================*/
+========================================== */
 
 .tips{
-
     background:#F7FFF8;
-
 }
 
 .tips-grid{
-
     display:grid;
-
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
     gap:30px;
-
 }
 
 .tip-card{
-
-    background:white;
-
     padding:40px;
-
-    border-radius:25px;
-
     text-align:center;
-
-    transition:.35s;
-
-    box-shadow:var(--shadow);
-
-}
-
-.tip-card:hover{
-
-    transform:translateY(-12px);
-
 }
 
 .tip-card i{
-
     font-size:3rem;
-
     color:var(--primary);
-
     margin-bottom:20px;
-
 }
 
 .tip-card h3{
-
     margin-bottom:15px;
-
 }
 
 .tip-card p{
-
     color:#666;
-
 }
 
-/*=========================================
-GREEN PLEDGE
-==========================================*/
+/* ==========================================
+PLEDGE
+========================================== */
 
-.pledge{
-
-    background:#ffffff;
-
+.pledge,
+.pledge-page{
+    background:#F7FFF8;
 }
 
 .pledge-box{
-
     max-width:800px;
-
     margin:auto;
-
     text-align:center;
+}
 
+.pledge textarea,
+.pledge-form textarea{
+    width:100%;
+    padding:20px;
+    border:2px solid #ddd;
+    border-radius:20px;
+    resize:none;
+    outline:none;
+    font-family:'DM Sans',sans-serif;
+    font-size:1rem;
 }
 
 .pledge textarea{
-
-    width:100%;
-
     height:180px;
-
-    resize:none;
-
-    padding:20px;
-
-    border-radius:20px;
-
-    border:2px solid #ddd;
-
-    font-size:1rem;
-
-    outline:none;
-
-    margin-bottom:25px;
-
-    font-family:'DM Sans',sans-serif;
-
 }
 
-.pledge textarea:focus{
+.pledge-form textarea{
+    height:220px;
+    margin-bottom:20px;
+}
 
+.pledge textarea:focus,
+.pledge-form textarea:focus{
     border-color:var(--primary);
-
 }
 
-.pledge button{
-
+.pledge button,
+.pledge-form button{
     padding:18px 45px;
-
     background:var(--primary);
-
-    color:white;
-
+    color:#fff;
     border:none;
-
     border-radius:50px;
-
     cursor:pointer;
-
     transition:.3s;
-
-    font-size:1rem;
-
 }
 
-.pledge button:hover{
-
+.pledge button:hover,
+.pledge-form button:hover{
     background:#1B5E20;
-
     transform:translateY(-4px);
-
 }
 
 .pledge-wall{
-
     margin-top:60px;
-
     display:grid;
-
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
     gap:25px;
-
 }
+
+/* ==========================================
+NOTE (Merged Version)
+========================================== */
 
 .note{
-
+    padding:22px;
+    margin-bottom:20px;
     background:#E8F5E9;
-
-    padding:25px;
-
-    border-radius:20px;
-
+    border-left:6px solid #2E7D32;
+    border-radius:18px;
     box-shadow:var(--shadow);
-
-    animation:fadeUp .6s ease;
-
-}
-
-.note p{
-
+    font-weight:500;
     color:#333;
-
+    transition:.3s;
+    animation:fadeUp .6s ease;
 }
 
-/*=========================================
-SDG13
-==========================================*/
+.note:hover{
+    transform:translateY(-5px);
+}
+
+/* ==========================================
+SDG
+========================================== */
 
 .sdg{
-
     background:linear-gradient(135deg,#E8F5E9,#F7FFF8);
-
 }
 
 .sdg-content{
-
     display:grid;
-
     grid-template-columns:1fr 1fr;
-
     gap:60px;
-
     align-items:center;
-
 }
 
 .sdg-left span{
-
     color:var(--primary);
-
     font-weight:700;
-
     letter-spacing:2px;
-
 }
 
 .sdg-left h2{
-
-    font-size:3rem;
-
     margin:20px 0;
-
+    font-size:3rem;
 }
 
 .sdg-left p{
-
     margin-bottom:35px;
-
     color:#555;
-
 }
 
 .sdg-right{
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     font-size:12rem;
-
 }
 
-/*=========================================
+/* ==========================================
 CALL TO ACTION
-==========================================*/
+========================================== */
 
 .cta{
-
     text-align:center;
-
     background:linear-gradient(135deg,#2E7D32,#43A047);
-
-    color:white;
-
+    color:#fff;
 }
 
 .cta h2{
-
     font-size:3rem;
-
     margin-bottom:20px;
-
 }
 
 .cta p{
-
-    font-size:1.1rem;
-
     margin-bottom:35px;
-
+    font-size:1.1rem;
 }
 
 .cta .primary-btn{
-
-    background:white;
-
+    background:#fff;
     color:var(--primary);
-
 }
 
 .cta .primary-btn:hover{
-
-    background:#F5F5F5;
-
+    background:#f5f5f5;
 }
 
-/*=========================================
+/* ==========================================
 FOOTER
-==========================================*/
+========================================== */
 
 footer{
-
     background:#1B4332;
-
-    color:white;
-
+    color:#fff;
     padding:80px 8% 30px;
-
 }
 
 .footer-container{
-
     display:grid;
-
     grid-template-columns:2fr 1fr 1fr;
-
     gap:50px;
-
-}
-
-.footer-logo h2{
-
-    margin-bottom:20px;
-
-}
-
-.footer-logo p{
-
-    color:#ddd;
-
 }
 
 .footer-links{
-
     display:flex;
-
     flex-direction:column;
-
-}
-
-.footer-links h3{
-
-    margin-bottom:20px;
-
 }
 
 .footer-links a{
-
-    color:#ddd;
-
-    text-decoration:none;
-
     margin-bottom:12px;
-
+    color:#ddd;
+    text-decoration:none;
     transition:.3s;
-
 }
 
 .footer-links a:hover{
-
     color:#81C784;
-
-}
-
-.footer-social h3{
-
-    margin-bottom:20px;
-
 }
 
 .footer-social a{
-
     display:inline-flex;
-
     justify-content:center;
-
     align-items:center;
-
     width:45px;
-
     height:45px;
-
-    border-radius:50%;
-
-    background:rgba(255,255,255,.1);
-
-    color:white;
-
     margin-right:10px;
-
-    transition:.3s;
-
+    border-radius:50%;
+    background:rgba(255,255,255,.1);
+    color:#fff;
     text-decoration:none;
-
+    transition:.3s;
 }
 
 .footer-social a:hover{
-
     background:#43A047;
-
     transform:translateY(-5px);
-
 }
 
 .copyright{
-
     margin-top:60px;
-
-    text-align:center;
-
-    color:#aaa;
-
-    border-top:1px solid rgba(255,255,255,.15);
-
     padding-top:25px;
-
+    border-top:1px solid rgba(255,255,255,.15);
+    text-align:center;
+    color:#aaa;
 }
 
-/*=========================================
+/* ==========================================
+PAGE HERO
+========================================== */
+
+.page-hero{
+    padding:180px 8% 100px;
+    text-align:center;
+    background:linear-gradient(135deg,#2E7D32,#43A047);
+    color:#fff;
+}
+
+.page-hero h1{
+    margin-bottom:20px;
+    font-size:4rem;
+}
+
+.page-hero p{
+    max-width:750px;
+    margin:auto;
+    color:#F4F4F4;
+}
+
+/* ==========================================
+ISSUE SECTION
+========================================== */
+
+.issue-section{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+    padding:100px 8%;
+}
+
+.issue-section:nth-child(even){
+    background:#F7FFF8;
+}
+
+.issue-section.reverse{
+    direction:rtl;
+}
+
+.issue-section.reverse .issue-info{
+    direction:ltr;
+}
+
+.issue-image{
+    overflow:hidden;
+    border-radius:30px;
+    box-shadow:var(--shadow);
+}
+
+.issue-image img{
+    height:500px;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.issue-image:hover img{
+    transform:scale(1.08);
+}
+
+.issue-info{
+    padding:45px;
+    background:#fff;
+    border-radius:25px;
+    box-shadow:var(--shadow);
+}
+
+.issue-info:hover{
+    transform:translateY(-8px);
+    transition:.35s;
+}
+
+/* ==========================================
 ANIMATIONS
-==========================================*/
+========================================== */
 
 @keyframes fadeUp{
-
     from{
-
         opacity:0;
-
         transform:translateY(40px);
-
     }
-
     to{
-
         opacity:1;
-
         transform:translateY(0);
-
     }
-
 }
 
 .about-card,
@@ -1094,775 +756,60 @@ ANIMATIONS
 .tip-card,
 .stat-card,
 .note{
-
     animation:fadeUp .8s ease;
-
 }
 
-/*=========================================
-SCROLLBAR
-==========================================*/
-
-::-webkit-scrollbar{
-
-    width:10px;
-
-}
-
-::-webkit-scrollbar-track{
-
-    background:#E8F5E9;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-    background:#43A047;
-
-    border-radius:50px;
-
-}
-
-::-webkit-scrollbar-thumb:hover{
-
-    background:#2E7D32;
-
-}
-
-/*=========================================
-PAGE HERO
-=========================================*/
-
-.page-hero{
-
-    padding:180px 8% 100px;
-
-    text-align:center;
-
-    background:linear-gradient(135deg,#2E7D32,#43A047);
-
-    color:white;
-
-}
-
-.page-hero h1{
-
-    font-size:4rem;
-
-    margin-bottom:20px;
-
-}
-
-.page-hero p{
-
-    max-width:750px;
-
-    margin:auto;
-
-    font-size:1.15rem;
-
-    color:#F4F4F4;
-
-}
-
-/*=========================================
-ISSUE SECTION
-=========================================*/
-
-.issue-section{
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:70px;
-
-    align-items:center;
-
-    padding:100px 8%;
-
-}
-
-.issue-section:nth-child(even){
-
-    background:#F7FFF8;
-
-}
-
-.issue-section.reverse{
-
-    direction:rtl;
-
-}
-
-.issue-section.reverse .issue-info{
-
-    direction:ltr;
-
-}
-
-.issue-image{
-
-    overflow:hidden;
-
-    border-radius:30px;
-
-    box-shadow:0 20px 45px rgba(0,0,0,.15);
-
-}
-
-.issue-image img{
-
-    width:100%;
-
-    height:500px;
-
-    object-fit:cover;
-
-    transition:.5s;
-
-}
-
-.issue-image:hover img{
-
-    transform:scale(1.08);
-
-}
-
-.issue-info h2{
-
-    font-size:2.8rem;
-
-    margin-bottom:20px;
-
-    color:#2E7D32;
-
-}
-
-.issue-info p{
-
-    color:#666;
-
-    font-size:1.1rem;
-
-    margin-bottom:30px;
-
-}
-
-.issue-info h3{
-
-    margin:25px 0 15px;
-
-    color:#1B4332;
-
-}
-
-.issue-info ul{
-
-    padding-left:20px;
-
-}
-
-.issue-info li{
-
-    margin-bottom:12px;
-
-    color:#555;
-
-}
-
-/*=========================================
-GREEN BOX
-=========================================*/
-
-.issue-info{
-
-    background:white;
-
-    padding:45px;
-
-    border-radius:25px;
-
-    box-shadow:0 15px 35px rgba(0,0,0,.08);
-
-}
-
-/*=========================================
-HOVER EFFECT
-=========================================*/
-
-.issue-info:hover{
-
-    transform:translateY(-8px);
-
-    transition:.35s;
-
-}
-
-/*=========================================
+/* ==========================================
 RESPONSIVE
-=========================================*/
+========================================== */
 
 @media(max-width:900px){
 
-.issue-section{
-
-grid-template-columns:1fr;
-
+.hero,
+.sdg-content,
+.issue-section,
+.about-page,
+.pledge-page{
+    grid-template-columns:1fr;
 }
 
 .issue-section.reverse{
-
-direction:ltr;
-
+    direction:ltr;
 }
 
 .page-hero h1{
+    font-size:2.8rem;
+}
 
-font-size:2.8rem;
+.hero h1{
+    font-size:3rem;
+}
 
+.about-image{
+    height:250px;
+    font-size:8rem;
 }
 
 .issue-image img{
-
-height:350px;
-
+    height:350px;
 }
 
+.footer-container{
+    grid-template-columns:1fr;
+    text-align:center;
 }
 
-/*=================================
-QUIZ
-=================================*/
-
-.quiz-section{
-
-padding:100px 8%;
-
-background:#F7FFF8;
-
-display:flex;
-
-justify-content:center;
-
+.hero-buttons{
+    flex-direction:column;
 }
 
-.quiz-card{
-
-background:white;
-
-padding:50px;
-
-max-width:750px;
-
-width:100%;
-
-border-radius:30px;
-
-box-shadow:0 20px 40px rgba(0,0,0,.08);
-
+.navbar{
+    flex-direction:column;
+    gap:20px;
 }
 
-.quiz-card h2{
-
-text-align:center;
-
-margin-bottom:35px;
-
+.nav-links{
+    flex-wrap:wrap;
+    justify-content:center;
 }
-
-.progress{
-
-width:100%;
-
-height:12px;
-
-background:#ddd;
-
-border-radius:50px;
-
-margin-bottom:40px;
-
-overflow:hidden;
-
-}
-
-#progressBar{
-
-height:100%;
-
-width:0%;
-
-background:#2E7D32;
-
-transition:.4s;
-
-}
-
-#question{
-
-font-size:1.5rem;
-
-font-weight:700;
-
-margin-bottom:30px;
-
-}
-
-#answers{
-
-display:flex;
-
-flex-direction:column;
-
-gap:15px;
-
-margin-bottom:30px;
-
-}
-
-.answer{
-
-padding:18px;
-
-border-radius:15px;
-
-border:2px solid #ddd;
-
-cursor:pointer;
-
-transition:.3s;
-
-}
-
-.answer:hover{
-
-background:#E8F5E9;
-
-border-color:#2E7D32;
-
-}
-
-.selected{
-
-background:#2E7D32;
-
-color:white;
-
-border-color:#2E7D32;
-
-}
-
-/*=========================================
-PLEDGE PAGE
-=========================================*/
-
-.pledge-page{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:50px;
-
-padding:100px 8%;
-
-background:#F7FFF8;
-
-}
-
-.pledge-form{
-
-background:white;
-
-padding:40px;
-
-border-radius:25px;
-
-box-shadow:0 20px 40px rgba(0,0,0,.08);
-
-}
-
-.pledge-form h2{
-
-margin-bottom:25px;
-
-}
-
-.pledge-form textarea{
-
-width:100%;
-
-height:220px;
-
-padding:20px;
-
-border-radius:20px;
-
-border:2px solid #ddd;
-
-resize:none;
-
-font-family:"DM Sans";
-
-font-size:1rem;
-
-margin-bottom:20px;
-
-}
-
-.pledge-form textarea:focus{
-
-border-color:#2E7D32;
-
-outline:none;
-
-}
-
-.pledge-display{
-
-background:white;
-
-padding:40px;
-
-border-radius:25px;
-
-box-shadow:0 20px 40px rgba(0,0,0,.08);
-
-}
-
-.pledge-display h2{
-
-margin-bottom:30px;
-
-}
-
-.note{
-
-padding:20px;
-
-margin-bottom:20px;
-
-background:#E8F5E9;
-
-border-left:6px solid #2E7D32;
-
-border-radius:15px;
-
-font-weight:500;
-
-transition:.3s;
-
-}
-
-.note:hover{
-
-transform:translateY(-5px);
-
-}
-
-@media(max-width:900px){
-
-.pledge-page{
-
-grid-template-columns:1fr;
-
-}
-
-}
-
-/*=================================
-SDG PAGE
-=================================*/
-
-.sdg-page{
-
-padding:100px 8%;
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-
-gap:35px;
-
-background:#F7FFF8;
-
-}
-
-.sdg-card{
-
-background:white;
-
-padding:40px;
-
-border-radius:25px;
-
-box-shadow:0 20px 40px rgba(0,0,0,.08);
-
-transition:.35s;
-
-}
-
-.sdg-card:hover{
-
-transform:translateY(-10px);
-
-}
-
-.sdg-card i{
-
-font-size:3rem;
-
-color:#2E7D32;
-
-margin-bottom:25px;
-
-}
-
-.sdg-card h2{
-
-margin-bottom:20px;
-
-}
-
-.sdg-card p{
-
-color:#666;
-
-}
-
-.sdg-card ul{
-
-padding-left:20px;
-
-margin-top:20px;
-
-}
-
-.sdg-card li{
-
-margin-bottom:12px;
-
-color:#555;
-
-}
-
-/*=================================
-ABOUT PAGE
-=================================*/
-
-.about-page{
-
-padding:100px 8%;
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:60px;
-
-align-items:center;
-
-}
-
-.about-content h2{
-
-font-size:3rem;
-
-margin-bottom:25px;
-
-color:#2E7D32;
-
-}
-
-.about-content p{
-
-margin-bottom:20px;
-
-color:#555;
-
-font-size:1.05rem;
-
-}
-
-.about-image{
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-font-size:12rem;
-
-background:#E8F5E9;
-
-border-radius:30px;
-
-height:400px;
-
-}
-
-.objective-section{
-
-padding:100px 8%;
-
-background:#F7FFF8;
-
-text-align:center;
-
-}
-
-.objective-grid{
-
-margin-top:60px;
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
-gap:30px;
-
-}
-
-.objective-card{
-
-background:white;
-
-padding:35px;
-
-border-radius:25px;
-
-box-shadow:0 20px 40px rgba(0,0,0,.08);
-
-transition:.3s;
-
-}
-
-.objective-card:hover{
-
-transform:translateY(-10px);
-
-}
-
-.objective-card i{
-
-font-size:3rem;
-
-color:#2E7D32;
-
-margin-bottom:20px;
-
-}
-
-.timeline{
-
-padding:100px 8%;
-
-}
-
-.timeline h2{
-
-text-align:center;
-
-margin-bottom:60px;
-
-}
-
-.timeline-container{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
-gap:30px;
-
-}
-
-.timeline-item{
-
-background:white;
-
-padding:35px;
-
-border-radius:25px;
-
-box-shadow:0 20px 40px rgba(0,0,0,.08);
-
-text-align:center;
-
-}
-
-.timeline-item span{
-
-display:inline-flex;
-
-justify-content:center;
-
-align-items:center;
-
-width:60px;
-
-height:60px;
-
-background:#2E7D32;
-
-color:white;
-
-font-weight:bold;
-
-border-radius:50%;
-
-margin-bottom:20px;
-
-font-size:1.4rem;
-
-}
-
-.timeline-item h3{
-
-margin-bottom:15px;
-
-}
-
-.timeline-item p{
-
-color:#666;
-
-}
-
-@media(max-width:900px){
-
-.about-page{
-
-grid-template-columns:1fr;
-
-text-align:center;
-
-}
-
-.about-image{
-
-height:250px;
-
-font-size:8rem;
-
-}
-
-}
-
-/* ==============================
-   RESPONSIVE DESIGN
-================================ */
-
-@media (max-width: 992px) {
-    /* tablet styles */
-}
-
-@media (max-width: 768px) {
-    /* mobile styles */
-}
-
-@media (max-width: 576px) {
-    /* small phone styles */
 }
